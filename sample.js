@@ -4,7 +4,7 @@ javascript:
 	{
 		j=['https://sgimera.github.io/mai_RatingAnalyzer/scripts/mai_inner_level.js',
 		   'https://sgimera.github.io/mai_RatingAnalyzer/scripts/calc_rating.js',
-		   'https://sgimera.github.io/mai_RatingAnalyzer/scripts/maiRatingAnalyzer_body.js'];
+		   'https://rawgit.com/Y-RAMU/Sample/master/body.js'];
 		f=function(s,u)
 		{
 			if(j.length==0)
