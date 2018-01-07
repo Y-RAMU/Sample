@@ -235,17 +235,6 @@ function print_result(golliramode, homeaddr)
 
 	result_str += "<h3>" + your_id + "の全譜面レート値データ<\/h3>";
 
-//	result_str += "<p align=center>";
-//	result_str += "<a href=\"https:\/\/twitter.com\/intent\/tweet\?hashtags=";
-//	result_str += hashtag;
-//	result_str += "\&text=";
-//	result_str += tweet_best_str + "\" ";
-//	result_str += "target=\"_blank\">＞＞TOP10のツイートはここをクリック＜＜<\/a><\/p>";
-
-	result_str += "<p>内部Lv.が12-表示は12.0, 12+表示は12.7、13-表示は13.0としてます。<\/p>";
-	result_str += "<p>内部Lv.がカッコつきのものは紫+ver.の値となってます。<\/p>";
-	result_str += "<p>暫定値が多数存在する以上、予想値は高くも低くもなります。<\/p>";
-
 	result_str += "<table border=1 align=\"center\">";
 
 	for(var i=0; i<datalist.length; i++)
