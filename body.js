@@ -316,16 +316,15 @@ function print_result(golliramode, homeaddr, trv)
 		var tmplv, tmprate;		
 		var nextrate = 0;
 		var nextrank = "SSS";
-		
-		rslt_str += "<table border=1 align=center>";
+		/*
 		rslt_str += "<tr>";
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
-	
+		*/
 		rslt_str += "<tr>";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
-		rslt_str += "<th rowspan=" + rowspan_num + " ";
-		rslt_str += "class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
+		rslt_str += "<th colspan=4>" + datalist[i].name + "<\/th>"
+		rslt_str += "<th class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
 		rslt_str += (datalist[i].music_rate/100).toFixed(2)  + "<\/th>"
 		
 		if(datalist[i].lv[2] != "")
@@ -383,17 +382,14 @@ function print_result(golliramode, homeaddr, trv)
 			nextrank = "SSS";
 		}
 		
-		rslt_str += "<th rowspan=" + rowspan_num + " ";
-		rslt_str += "class=mai_master>";
+		rslt_str += "<th class=mai_master>";
 		rslt_str += "" + tmprate + "(" + nextrank + " - " + nextrate.toFixed(2) + ")";
 		rslt_str += "<\/th>";
 
-		rslt_str += "<th rowspan=" + rowspan_num + " ";
-		rslt_str += "class=mai_master>" + tmplv + "<\/th>";
+		rslt_str += "<th class=mai_master>" + tmplv + "<\/th>";
 		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
-		rslt_str += "<th ";
-		rslt_str += "class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
-		rslt_str += "<\/tr><\/table>";
+		rslt_str += "<th class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
+		rslt_str += "<\/tr>";
 	}
 	
 	rslt_str += "<\/table>";
