@@ -307,7 +307,7 @@ function print_result(golliramode, homeaddr, trv)
 	
 	rslt_str += "<h2>" + your_id + "の全譜面レート値データ<\/h2>";
 	
-	rslt_str += "<table border=1 align=center>";
+	rslt_str += "<table width=80% border=1 align=center>";
 
 	for(var i=0; i<datalist.length; i++)
 	{
@@ -322,7 +322,7 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<\/tr>"
 		*/
 		
-		rslt_str += "<table border=1>";
+		rslt_str += "<table width=80% border=1>";
 		
 		rslt_str += "<tr>";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
@@ -359,7 +359,7 @@ function print_result(golliramode, homeaddr, trv)
 			rslt_str += "<td class=mai_remaster>" + tmplv + "<\/td>";
 			//rslt_str += "<th class=mai_remaster>" + (100*datalist[i].achive[2]).toFixed(4) + "%<\/th>";
 			rslt_str += "<td class=mai_remaster>" + (Math.floor((100*datalist[i].achive[2])*100)/100).toFixed(2) + "%<\/td>";
-			rslt_str += "<\/td>";
+			rslt_str += "<\/td><\/tr><tr>";
 			
 		}
 		
