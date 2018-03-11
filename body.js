@@ -351,7 +351,7 @@ function print_result(golliramode, homeaddr, trv)
 	
 			rslt_str += "<th class=mai_remaster>" + tmplv + "<\/th>";
 			//rslt_str += "<th class=mai_remaster>" + (100*datalist[i].achive[2]).toFixed(4) + "%<\/th>";
-			rslt_str += "<th class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
+			rslt_str += "<th class=mai_master>" + (Math.floor((100*datalist[i].achive[2])*100)/100).toFixed(2) + "%<\/th>";
 			rslt_str += "<\/tr>";
 			
 			rslt_str += "<tr>";
