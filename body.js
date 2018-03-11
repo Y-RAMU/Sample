@@ -476,10 +476,10 @@ function datalist_recalc()
 	
 	for(var i=0; i<listlength; i++)
 	{
-		datalist[i].lv[2]=uso_level(datalist[i].lv[2]);
+		//datalist[i].lv[2]=uso_level(datalist[i].lv[2]);
 		datalist[i].rate_values[2] = mra_arch2rate_100(datalist[i].achive[2], datalist[i].lv[2]);
 
-		datalist[i].lv[1]=uso_level(datalist[i].lv[1]);
+		//datalist[i].lv[1]=uso_level(datalist[i].lv[1]);
 		datalist[i].rate_values[1] = mra_arch2rate_100(datalist[i].achive[1], datalist[i].lv[1]);
 
 		// 曲別レート値の最大が変化するので再計算。
@@ -536,7 +536,7 @@ function analyzing_rating()
 	tweet_rate_str += "B%3a" + best_rating + "%20%2B%20R%3a" + recent_rating + "%20%2B%20H%3a" + hist_rating + "%0D%0A";
 }
 
-var tmpstr = "--舞レート解析・あならいざもどき--\n(trial)\n\n";
+var tmpstr = "--舞レート解析--\n(trial)\n\n";
 tmpstr += maimai_inner_lv.length + "songs(" + mra_update_mlist + ") version\n";
 tmpstr += "Last Update : ";
 tmpstr += (mra_update_algorithm >= mra_update_llist)?mra_update_algorithm:mra_update_llist;
