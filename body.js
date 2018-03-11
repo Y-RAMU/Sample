@@ -360,7 +360,6 @@ function print_result(golliramode, homeaddr, trv)
 			
 			rslt_str += "<tr>";
 			
-			rowspan_num = 1;
 		}
 		
 		
