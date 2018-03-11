@@ -317,6 +317,7 @@ function print_result(golliramode, homeaddr, trv)
 		var nextrate = 0;
 		var nextrank = "SSS";
 		
+		rslt_str += "<table border=1 align=center>";
 		rslt_str += "<tr>";
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
@@ -392,7 +393,7 @@ function print_result(golliramode, homeaddr, trv)
 		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
 		rslt_str += "<th ";
 		rslt_str += "class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
-		rslt_str += "<\/tr>";
+		rslt_str += "<\/tr><\/table>";
 	}
 	
 	rslt_str += "<\/table>";
