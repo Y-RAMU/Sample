@@ -311,7 +311,7 @@ function print_result(golliramode, homeaddr, trv)
 
 	for(var i=0; i<datalist.length; i++)
 	{
-		var rowspan_num = 3 - ((datalist[i].lv[2] != "")?0:1);
+		var rowspan_num = 2 - ((datalist[i].lv[2] != "")?0:1);
 		var tmp_rate=0;
 		var tmplv, tmprate;		
 		var nextrate = 0;
@@ -386,19 +386,6 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<th class=mai_master>" + tmplv + "<\/th>";
 		rslt_str += "<th class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
 		rslt_str += "<\/tr>";
-
-		if(golliramode == 0)
-		{
-			rslt_str += "<tr>";
-			rslt_str += "<th class=mai_expert>";
-			rslt_str += (datalist[i].rate_values[0]/100).toFixed(2);
-			rslt_str += "<\/th>";
-
-			tmplv=(datalist[i].lv[0].slice(-1)=='-')?(datalist[i].lv[0].slice(0, -1)):datalist[i].lv[0];
-			rslt_str += "<th class=mai_expert>" + tmplv + "<\/th>";
-			rslt_str += "<th class=mai_expert>" + (100*datalist[i].achive[0]).toFixed(4) + "%<\/th>";
-			rslt_str += "<\/tr>";
-		}
 	}
 	
 	rslt_str += "<\/table>";
