@@ -321,10 +321,13 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
 		*/
+		
+		rslt_str += "<table border=1>";
+		
 		rslt_str += "<tr>";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
-		rslt_str += "<th colspan=4>" + datalist[i].name + "<\/th>"
-		rslt_str += "<td class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
+		rslt_str += "<th colspan=4>" + datalist[i].name + "<\/th><\/tr>"
+		rslt_str += "<tr><td class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
 		rslt_str += (datalist[i].music_rate/100).toFixed(2)  + "<\/td>"
 		
 		if(datalist[i].lv[2] != "")
@@ -386,7 +389,7 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<td class=mai_master>" + tmplv + "<\/td>";
 		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
 		rslt_str += "<td class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/td>";
-		rslt_str += "<\/tr>";
+		rslt_str += "<\/tr><\/table>";
 	}
 	
 	rslt_str += "<\/table>";
