@@ -5,7 +5,7 @@ javascript:
 		j=['https://sgimera.github.io/mai_RatingAnalyzer/scripts/mai_inner_level_milk2.js',
 		   'https://sgimera.github.io/mai_RatingAnalyzer/scripts/calc_rating_test.js',
 		   //'https://sgimera.github.io/mai_RatingAnalyzer/scripts/maiRatingAnalyzer_body.js'
-		   'https://cdn.rawgit.com/Y-RAMU/Sample/ed93109a/body.js'];
+		   'https://cdn.rawgit.com/Y-RAMU/Sample/b6fa9584/body.js'];
 		f=function(s,u)
 		{
 			if(j.length==0)
