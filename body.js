@@ -311,7 +311,7 @@ function print_result(golliramode, homeaddr, trv)
 
 	for(var i=0; i<datalist.length; i++)
 	{
-		var rowspan_num = 2;
+		var rowspan_num = 3 - ((datalist[i].lv[2] != "")?0:1);
 		var tmp_rate=0;
 		var tmplv, tmprate;		
 		var nextrate = 0;
@@ -321,11 +321,11 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
 		*/
-		rslt_str += "<tr width=\"400\">";
+		rslt_str += "<tr>";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
 		rslt_str += "<th colspan=4>" + datalist[i].name + "<\/th>"
-		rslt_str += "<th class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
-		rslt_str += (datalist[i].music_rate/100).toFixed(2)  + "<\/th>"
+		rslt_str += "<td class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
+		rslt_str += (datalist[i].music_rate/100).toFixed(2)  + "<\/td>"
 		
 		if(datalist[i].lv[2] != "")
 		{
@@ -348,19 +348,16 @@ function print_result(golliramode, homeaddr, trv)
 				nextrank = "SSS";
 			}
 			
-			rslt_str += "<th class=mai_remaster>";
+			rslt_str += "<td class=mai_remaster>";
 			//rslt_str += (datalist[i].rate_values[2]/100).toFixed(2);
 			rslt_str += "" + tmprate + "(" + nextrank + " - " + nextrate.toFixed(2) + ")";
-			rslt_str += "<\/th>";
+			rslt_str += "<\/td>";
 	
-			rslt_str += "<th class=mai_remaster>" + tmplv + "<\/th>";
+			rslt_str += "<td class=mai_remaster>" + tmplv + "<\/td>";
 			//rslt_str += "<th class=mai_remaster>" + (100*datalist[i].achive[2]).toFixed(4) + "%<\/th>";
-			rslt_str += "<th class=mai_remaster>" + (Math.floor((100*datalist[i].achive[2])*100)/100).toFixed(2) + "%<\/th>";
-			rslt_str += "<\/tr>";
+			rslt_str += "<td class=mai_remaster>" + (Math.floor((100*datalist[i].achive[2])*100)/100).toFixed(2) + "%<\/td>";
+			rslt_str += "<\/td>";
 			
-			rslt_str += "<tr>";
-			
-			rowspan_num = 1;
 		}
 		
 		
@@ -382,13 +379,13 @@ function print_result(golliramode, homeaddr, trv)
 			nextrank = "SSS";
 		}
 		
-		rslt_str += "<th class=mai_master>";
+		rslt_str += "<td class=mai_master>";
 		rslt_str += "" + tmprate + "(" + nextrank + " - " + nextrate.toFixed(2) + ")";
-		rslt_str += "<\/th>";
+		rslt_str += "<\/td>";
 
-		rslt_str += "<th class=mai_master>" + tmplv + "<\/th>";
+		rslt_str += "<td class=mai_master>" + tmplv + "<\/td>";
 		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
-		rslt_str += "<th class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
+		rslt_str += "<td class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/td>";
 		rslt_str += "<\/tr>";
 	}
 	
