@@ -307,7 +307,7 @@ function print_result(golliramode, homeaddr, trv)
 	
 	rslt_str += "<h2>" + your_id + "の全譜面レート値データ<\/h2>";
 	
-	rslt_str += "<table width=80% border=1 align=center>";
+	rslt_str += "<table border=1 align=center>";
 
 	for(var i=0; i<datalist.length; i++)
 	{
@@ -316,19 +316,16 @@ function print_result(golliramode, homeaddr, trv)
 		var tmplv, tmprate;		
 		var nextrate = 0;
 		var nextrank = "SSS";
-		/*
+		
 		rslt_str += "<tr>";
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
-		*/
-		
-		rslt_str += "<table width=80% border=1>";
-		
+	
 		rslt_str += "<tr>";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
-		rslt_str += "<th colspan=4>" + datalist[i].name + "<\/th><\/tr>"
-		rslt_str += "<tr><td class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
-		rslt_str += (datalist[i].music_rate/100).toFixed(2)  + "<\/td>"
+		rslt_str += "<th rowspan=" + rowspan_num + " ";
+		rslt_str += "class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
+		rslt_str += (datalist[i].music_rate/100).toFixed(2)  + "<\/th>"
 		
 		if(datalist[i].lv[2] != "")
 		{
@@ -351,15 +348,15 @@ function print_result(golliramode, homeaddr, trv)
 				nextrank = "SSS";
 			}
 			
-			rslt_str += "<td class=mai_remaster>";
+			rslt_str += "<th class=mai_remaster>";
 			//rslt_str += (datalist[i].rate_values[2]/100).toFixed(2);
 			rslt_str += "" + tmprate + "(" + nextrank + " - " + nextrate.toFixed(2) + ")";
-			rslt_str += "<\/td>";
+			rslt_str += "<\/th>";
 	
-			rslt_str += "<td class=mai_remaster>" + tmplv + "<\/td>";
+			rslt_str += "<th class=mai_remaster>" + tmplv + "<\/th>";
 			//rslt_str += "<th class=mai_remaster>" + (100*datalist[i].achive[2]).toFixed(4) + "%<\/th>";
-			rslt_str += "<td class=mai_remaster>" + (Math.floor((100*datalist[i].achive[2])*100)/100).toFixed(2) + "%<\/td>";
-			rslt_str += "<\/td><\/tr><tr>";
+			rslt_str += "<th class=mai_remaster>" + (Math.floor((100*datalist[i].achive[2])*100)/100).toFixed(2) + "%<\/th>";
+			rslt_str += "<\/tr><tr>";
 			
 		}
 		
@@ -382,14 +379,26 @@ function print_result(golliramode, homeaddr, trv)
 			nextrank = "SSS";
 		}
 		
-		rslt_str += "<td class=mai_master>";
+		rslt_str += "<th class=mai_master>";
 		rslt_str += "" + tmprate + "(" + nextrank + " - " + nextrate.toFixed(2) + ")";
-		rslt_str += "<\/td>";
+		rslt_str += "<\/th>";
+		
+		rslt_str += "<th class=mai_master>" + tmplv + "<\/th>";
+		rslt_str += "<th class=mai_master>" + (Math.floor((100*datalist[i].achive[2])*100)/100).toFixed(2) + "%<\/th>";
+		rslt_str += "<\/tr>";
 
-		rslt_str += "<td class=mai_master>" + tmplv + "<\/td>";
-		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
-		rslt_str += "<td class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/td>";
-		rslt_str += "<\/tr><\/table>";
+		if(golliramode == 0)
+		{
+			rslt_str += "<tr>";
+			rslt_str += "<th class=mai_expert>";
+			rslt_str += (datalist[i].rate_values[0]/100).toFixed(2);
+			rslt_str += "<\/th>";
+
+			tmplv=(datalist[i].lv[0].slice(-1)=='-')?(datalist[i].lv[0].slice(0, -1)):datalist[i].lv[0];
+			rslt_str += "<th class=mai_expert>" + tmplv + "<\/th>";
+			rslt_str += "<th class=mai_expert>" + (100*datalist[i].achive[0]).toFixed(4) + "%<\/th>";
+			rslt_str += "<\/tr>";
+		}
 	}
 	
 	rslt_str += "<\/table>";
