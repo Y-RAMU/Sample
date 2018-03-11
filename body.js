@@ -340,53 +340,8 @@ function print_result(golliramode, homeaddr, trv)
 	rslt_str += "<\/tr>";
 	rslt_str += "<\/table>";
 	rslt_str += "<\/div>";
-
-	rslt_str += "<p align=center>";
-	rslt_str += "<a href=\"https:\/\/twitter.com\/intent\/tweet\?hashtags=";
-	rslt_str += hashtag;
-	rslt_str += "\&text=";
-	rslt_str += tweet_rate_str + "\" ";
-	rslt_str += "target=\"_blank\">＞＞Rating情報のツイートはここをクリック＜＜<\/a><\/p>";
-
-	rslt_str += "<p align=center>";
-	rslt_str += "<a href=\"https:\/\/sgimera.github.io\/mai_RatingAnalyzer\" target=\"_blank\">";
-	rslt_str += "＞＞解説は新・CYCLES FUNの寝言 siteへ＜＜<\/a><\/p>";
-
+	
 	rslt_str += "<h2>" + your_id + "の全譜面レート値データ<\/h2>";
-	rslt_str += "<p>寝言サイトにも書いてますが、<b>ただの飾り<\/b>です。参考情報。<\/p>";
-
-	if(hashtag.slice(-4)=="test")
-	{
-	rslt_str += "<p align=center>";
-	rslt_str += "<a href=\"https:\/\/twitter.com\/intent\/tweet\?hashtags=";
-	rslt_str += hashtag;
-	rslt_str += "\&text=";
-	rslt_str += tweet_best_str + "\" ";
-	rslt_str += "target=\"_blank\">＞＞TOP10のツイートはここをクリック＜＜<\/a><\/p>";
-	}
-	else
-	{
-	rslt_str += "<table align=center border=1>";
-	rslt_str += "<tr>";
-	rslt_str += "<th colspan=2><\/th> <td>カッコあり<\/td> <td>カッコなし<\/td>";
-	rslt_str += "<\/tr>";
-	rslt_str += "<tr>";
-	rslt_str += "<th rowspan=2 >Re:Master<br>Master<\/th><th>12以上<\/th>";
-	rslt_str += "<td><font color=red>未検証<\/font><\/td>";
-	rslt_str += "<td>検証済み<br>ゲーム内表示Lv.で表記<\/td>";
-	rslt_str += "<\/tr>";
-	rslt_str += "<tr>";
-	rslt_str += "<th>11+以下<\/th>";
-	rslt_str += "<td><font color=red>未検証<\/font><br>暫定で紫+ver.の値<\/td>";
-	rslt_str += "<td>調査済みの値<\/td>";
-	rslt_str += "<\/tr>";
-	rslt_str += "<tr>"
-	rslt_str += "<th colspan=2>Expert<\/th>";
-	rslt_str += "<td><font color=red>未検証<\/font><br>暫定で紫+ver.の値<\/font><\/td>";
-	rslt_str += "<td>小数点有なら検証済み<br>小数点無は<font color=red>未検証<\/font></\td>";
-	rslt_str += "<\/tr>";
-	rslt_str += "<\/table><br><br>";
-	}
 	
 	rslt_str += "<table border=1 align=center>";
 
@@ -502,10 +457,12 @@ function uso_level(lv)
 {
 	switch(lv.slice(-1))
 	{
+			/*
 		case "+":
 		case "-":
 		case ")":
 			return lv;
+			*/
 		default:
 			break;
 	}
