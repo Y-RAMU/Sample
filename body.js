@@ -348,7 +348,8 @@ function print_result(golliramode, homeaddr, trv)
 			(datalist[i].lv[1].slice(-1)=='=')?(datalist[i].lv[1].slice(0, -1)):datalist[i].lv[1];
 		
 		rslt_str += "<th class=mai_master>" + tmplv + "<\/th>";
-		rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(2) + "%<\/th>";
+		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(2) + "%<\/th>";
+		rslt_str += "<th class=mai_master>" + Math.floor((100*datalist[i].achive[1])*100)/100 + "%<\/th>";
 		rslt_str += "<\/tr>";
 
 		if(golliramode == 0)
