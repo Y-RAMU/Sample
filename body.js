@@ -307,7 +307,7 @@ function print_result(golliramode, homeaddr, trv)
 	
 	rslt_str += "<h2>" + your_id + "の全譜面レート値データ<\/h2>";
 	
-	rslt_str += "<table cols=5 border=1 align=center>";
+	rslt_str += "<table border=1 align=center>";
 
 	for(var i=0; i<datalist.length; i++)
 	{
@@ -321,7 +321,7 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
 		*/
-		rslt_str += "<tr>";
+		rslt_str += "<tr width="400">";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
 		rslt_str += "<th colspan=4>" + datalist[i].name + "<\/th>"
 		rslt_str += "<th class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
