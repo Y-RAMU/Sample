@@ -307,7 +307,7 @@ function print_result(golliramode, homeaddr, trv)
 	
 	rslt_str += "<h2>" + your_id + "の全譜面レート値データ<\/h2>";
 	
-	rslt_str += "<table border=1 align=center>";
+	rslt_str += "<table cols=5 border=1 align=center>";
 
 	for(var i=0; i<datalist.length; i++)
 	{
