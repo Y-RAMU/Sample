@@ -315,6 +315,7 @@ function print_result(golliramode, homeaddr, trv)
 		var tmp_rate=0;
 		var tmplv, tmprate;		
 		var nextrate = 0;
+		var nextrank = "";
 		
 		rslt_str += "<tr>";
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
@@ -336,17 +337,20 @@ function print_result(golliramode, homeaddr, trv)
 		
 			if (datalist[i].achive[2] < 0.97) {
 				nextrate = mra_diff2s(tmplv) - tmprate;
+				nextrank = "S";
 			}
 			else if ((0.97<=datalist[i].achive[2]) && (datalist[i].achive[2]<0.99)) {
 				nextrate = (mra_diff2sss(tmplv)-1) - tmprate;
+				nextrank = "SS";
 			}
 			else if ((0.99<=datalist[i].achive[2]) && (datalist[i].achive[2]<1)) {
 				nextrate = mra_diff2sss(tmplv) - tmprate;
+				nextrank = "SSS";
 			}
 			
 			rslt_str += "<th class=mai_remaster>";
 			//rslt_str += (datalist[i].rate_values[2]/100).toFixed(2);
-			rslt_str += "" + tmprate + "(" + (-1.0)*nextrate.toFixed(2) + ")";
+			rslt_str += "" + tmprate + "(" + nextrank + (-1.0)*nextrate.toFixed(2) + ")";
 			rslt_str += "<\/th>";
 	
 			rslt_str += "<th class=mai_remaster>" + tmplv + "<\/th>";
@@ -365,16 +369,19 @@ function print_result(golliramode, homeaddr, trv)
 		
 		if (datalist[i].achive[1] < 0.97) {
 			nextrate = mra_diff2s(tmplv) - tmprate;
+			nextrank = "S";
 		}
 		else if ((0.97<=datalist[i].achive[1]) && (datalist[i].achive[1]<0.99)) {
 			nextrate = (mra_diff2sss(tmplv)-1) - tmprate;
+			nextrank = "SS";
 		}
 		else if ((0.99<=datalist[i].achive[1]) && (datalist[i].achive[1]<1)) {
 			nextrate = mra_diff2sss(tmplv) - tmprate;
+			nextrank = "SSS";
 		}
 		
 		rslt_str += "<th class=mai_master>";
-		rslt_str += "" + tmprate + "(" + (-1.0)*nextrate.toFixed(2) + ")";
+		rslt_str += "" + tmprate + "(" + nextrank + (-1.0)*nextrate.toFixed(2) + ")";
 		rslt_str += "<\/th>";
 
 		rslt_str += "<th class=mai_master>" + tmplv + "<\/th>";
