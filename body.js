@@ -387,7 +387,7 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "" + tmprate + "(" + nextrank + " - " + nextrate.toFixed(2) + ")";
 		rslt_str += "<\/th>";
 
-		rslt_str += "<th ";
+		rslt_str += "<th rowspan=" + rowspan_num + " ";
 		rslt_str += "class=mai_master>" + tmplv + "<\/th>";
 		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
 		rslt_str += "<th ";
