@@ -321,7 +321,7 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
 		*/
-		rslt_str += "<tr width="400">";
+		rslt_str += "<tr width=\"400\">";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
 		rslt_str += "<th colspan=4>" + datalist[i].name + "<\/th>"
 		rslt_str += "<th class=" + get_ratingrank(datalist[i].music_rate/100) + ">"
