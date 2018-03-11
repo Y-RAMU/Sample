@@ -304,42 +304,6 @@ function print_result(golliramode, homeaddr, trv)
 		print_result_sub("HISTORY枠", hist_rating + "<br>(" + hist_left + ")",
 				 "(上位" + mra_history +"曲の合計)/(" + mra_history + "*44/4)<br>()は+0.01する為の必要レート");
 	rslt_str += "<\/table>";
-
-	rslt_str += "<table border=1 align=\"center\">";
-	rslt_str += "<tr>";
-	rslt_str += "<th colspan=11 bgcolor=\"\#000000\"><font color=\"\#ffffff\">Rank/Complete情報<\/th>";
-	rslt_str += "<\/tr>";
-	rslt_str += "<tr>";
-	rslt_str += "<th colspan=1 bgcolor=\"\#FFFFFF\"><font color=\"\#000000\">ver.<\/font><\/th>";	
-	rslt_str += "<th colspan=2 bgcolor=\"\#0095d9\"><font color=\"\#ffffff\">maimai<\/font><\/th>";
-	rslt_str += "<th colspan=2 bgcolor=\"\#00b300\"><font color=\"\#ffffff\">GreeN<\/font><\/th>";
-	rslt_str += "<th colspan=2 bgcolor=\"\#fab300\"><font color=\"\#000000\">ORANGE<\/font><\/th>";
-	rslt_str += "<th colspan=2 bgcolor=\"\#FF83CC\"><font color=\"\#000000\">PiNK<\/font><\/th>";
-	rslt_str += "<th colspan=2 bgcolor=\"\#b44c97\"><font color=\"\#ffffff\">MURASAKi<\/font><\/th>";	
-	rslt_str += "<\/tr>";
-	rslt_str += "<tr>";
-	rslt_str += "<th colspan=1 bgcolor=\"\#ffffff\"><font color=\"\#000000\">段位<\/font><\/th>";	
-	rslt_str += "<th colspan=2 align=center bgcolor=\"\#0095d9\"><font color=\"\#ffffff\">" + ranklist[0] + "<\/font><\/th>";
-	rslt_str += "<th colspan=2 align=center bgcolor=\"\#00b300\"><font color=\"\#ffffff\">" + ranklist[1] + "<\/font><\/th>";
-	rslt_str += "<th colspan=2 align=center bgcolor=\"\#fab300\"><font color=\"\#000000\">" + ranklist[2] + "<\/font><\/th>";
-	rslt_str += "<th colspan=2 align=center bgcolor=\"\#FF83CC\"><font color=\"\#000000\">" + ranklist[3] + "<\/font><\/th>";
-	rslt_str += "<th colspan=2 align=center bgcolor=\"\#b44c97\"><font color=\"\#ffffff\">" + ranklist[4] + "<\/font><\/th>";
-	rslt_str += "<\/tr>";
-	rslt_str += "<tr>";
-	rslt_str += "<th bgcolor=\"\#ffffff\"><font color=\"\#000000\">制覇<\/font><\/th>";	
-	rslt_str += "<th align=center bgcolor=\"\#0095d9\"><font color=\"\#ffffff\">" + complist[0] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#0095d9\"><font color=\"\#ffffff\">" + complist[1] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#00b300\"><font color=\"\#ffffff\">" + complist[2] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#00b300\"><font color=\"\#ffffff\">" + complist[3] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#fab300\"><font color=\"\#000000\">" + complist[4] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#fab300\"><font color=\"\#000000\">" + complist[5] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#FF83CC\"><font color=\"\#000000\">" + complist[6] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#FF83CC\"><font color=\"\#000000\">" + complist[7] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#b44c97\"><font color=\"\#ffffff\">" + complist[8] + "<\/font><\/th>";
-	rslt_str += "<th align=center bgcolor=\"\#b44c97\"><font color=\"\#ffffff\">" + complist[9] + "<\/font><\/th>";
-	rslt_str += "<\/tr>";
-	rslt_str += "<\/table>";
-	rslt_str += "<\/div>";
 	
 	rslt_str += "<h2>" + your_id + "の全譜面レート値データ<\/h2>";
 	
@@ -384,7 +348,7 @@ function print_result(golliramode, homeaddr, trv)
 			(datalist[i].lv[1].slice(-1)=='=')?(datalist[i].lv[1].slice(0, -1)):datalist[i].lv[1];
 		
 		rslt_str += "<th class=mai_master>" + tmplv + "<\/th>";
-		rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
+		rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(2) + "%<\/th>";
 		rslt_str += "<\/tr>";
 
 		if(golliramode == 0)
