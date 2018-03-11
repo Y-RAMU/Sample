@@ -360,6 +360,7 @@ function print_result(golliramode, homeaddr, trv)
 			
 			rslt_str += "<tr>";
 			
+			rowspan_num = 1;
 		}
 		
 		
@@ -381,15 +382,15 @@ function print_result(golliramode, homeaddr, trv)
 			nextrank = "SSS";
 		}
 		
-		rslt_str += "<th rowspan=" + rowspan_num + " ";
+		rslt_str += "<th ";
 		rslt_str += "class=mai_master>";
 		rslt_str += "" + tmprate + "(" + nextrank + " - " + nextrate.toFixed(2) + ")";
 		rslt_str += "<\/th>";
 
-		rslt_str += "<th rowspan=" + rowspan_num + " ";
+		rslt_str += "<th ";
 		rslt_str += "class=mai_master>" + tmplv + "<\/th>";
 		//rslt_str += "<th class=mai_master>" + (100*datalist[i].achive[1]).toFixed(4) + "%<\/th>";
-		rslt_str += "<th rowspan=" + rowspan_num + " ";
+		rslt_str += "<th ";
 		rslt_str += "class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
 		rslt_str += "<\/tr>";
 	}
