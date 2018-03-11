@@ -350,10 +350,10 @@ function print_result(golliramode, homeaddr, trv)
 		if (datalist[i].achive[1] < 0.97) {
 			nextrate = mra_diff2s(tmplv) - tmprate;
 		}
-		else if ((0.97<=datalist[i].achive[1]) && (datalist[i].achive[1]<0.99) {
+		else if ((0.97<=datalist[i].achive[1]) && (datalist[i].achive[1]<0.99)) {
 			nextrate = (mra_diff2sss(tmplv)-1) - tmprate;
 		}
-		else if ((0.99<=datalist[i].achive[1]) && (datalist[i].achive[1]<1) {
+		else if ((0.99<=datalist[i].achive[1]) && (datalist[i].achive[1]<1)) {
 			nextrate = mra_diff2sss(tmplv) - tmprate;
 		}
 		
