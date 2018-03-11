@@ -321,6 +321,7 @@ function print_result(golliramode, homeaddr, trv)
 		rslt_str += "<th colspan=5>" + datalist[i].name + "<\/th>"
 		rslt_str += "<\/tr>"
 	
+		rowspan_num = 2;
 		rslt_str += "<tr>";
 		rslt_str += "<td align=\"center\" rowspan=" + rowspan_num + ">" + (i+1) + "<\/td>";
 		rslt_str += "<th rowspan=" + rowspan_num + " ";
