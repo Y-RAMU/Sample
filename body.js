@@ -311,7 +311,7 @@ function print_result(golliramode, homeaddr, trv)
 
 	for(var i=0; i<datalist.length; i++)
 	{
-		var rowspan_num = 3-golliramode - ((datalist[i].lv[2] != "")?0:1);
+		var rowspan_num = 2 - ((datalist[i].lv[2] != "")?0:1);
 		var tmp_rate=0;
 		var tmplv, tmprate;		
 		var nextrate = 0;
@@ -328,14 +328,30 @@ function print_result(golliramode, homeaddr, trv)
 		
 		if(datalist[i].lv[2] != "")
 		{
-			rslt_str += "<th class=mai_remaster>";
-			rslt_str += (datalist[i].rate_values[2]/100).toFixed(2);
-			rslt_str += "<\/th>";
-	
+			
 			tmplv=(datalist[i].lv[2].slice(-1)=='-')?(datalist[i].lv[2].slice(0, -1)):
 				(datalist[i].lv[2].slice(-1)=='=')?(datalist[i].lv[2].slice(0, -1)):datalist[i].lv[2];
+			
+			tmprate = (datalist[i].rate_values[2]/100).toFixed(2);
+		
+			if (datalist[i].achive[2] < 0.97) {
+				nextrate = mra_diff2s(tmplv) - tmprate;
+			}
+			else if ((0.97<=datalist[i].achive[2]) && (datalist[i].achive[2]<0.99)) {
+				nextrate = (mra_diff2sss(tmplv)-1) - tmprate;
+			}
+			else if ((0.99<=datalist[i].achive[2]) && (datalist[i].achive[2]<1)) {
+				nextrate = mra_diff2sss(tmplv) - tmprate;
+			}
+			
+			rslt_str += "<th class=mai_remaster>";
+			//rslt_str += (datalist[i].rate_values[2]/100).toFixed(2);
+			rslt_str += "" + tmprate + "(" + (-1.0)*nextrate.toFixed(2) + ")";
+			rslt_str += "<\/th>";
+	
 			rslt_str += "<th class=mai_remaster>" + tmplv + "<\/th>";
-			rslt_str += "<th class=mai_remaster>" + (100*datalist[i].achive[2]).toFixed(4) + "%<\/th>";
+			//rslt_str += "<th class=mai_remaster>" + (100*datalist[i].achive[2]).toFixed(4) + "%<\/th>";
+			rslt_str += "<th class=mai_master>" + (Math.floor((100*datalist[i].achive[1])*100)/100).toFixed(2) + "%<\/th>";
 			rslt_str += "<\/tr>";
 			
 			rslt_str += "<tr>";
