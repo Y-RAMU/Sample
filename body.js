@@ -328,8 +328,6 @@ function print_result(golliramode, homeaddr, trv)
 				 "(上位" + mra_history +"曲の合計)/(" + mra_history + "*44/4)<br>()は+0.01する為の必要レート");
 	rslt_str += "<\/table>";
 	
-	rslt_str += "<p> <input type=\"button\" value=\"test\" onclick=\"console.log(\"Hello\")\"> <\/p>";
-	
 	rslt_str += "<table id=\"rateData\" border=1 align=center>";
 
 	for(var i=0; i<datalist.length; i++)
