@@ -380,9 +380,7 @@ function print_result(golliramode, homeaddr, trv)
 		}
 		
 		
-		tmplv=(datalist[i].lv[1].slice(-1)=='-')?(datalist[i].lv[1].slice(0, -1)):
-			(datalist[i].lv[1].slice(-1)=='=')?(datalist[i].lv[1].slice(0, -1)):
-			(datalist[i].lv[1].slice(0)=='(')?(datalist[i].lv[1].slice(1, -1)):datalist[i].lv[1];
+		tmplv=(datalist[i].lv[1].slice(0,1)=='(')?(datalist[i].lv[1].slice(1, -1)):datalist[i].lv[1];
 		
 		tmprate = (datalist[i].rate_values[1]/100).toFixed(2);
 		
