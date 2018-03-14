@@ -257,6 +257,27 @@ function print_result_rating(title, value, explain, dispbasevalue)
 	
 	return tmp;
 }
+	
+function sort_diff (addr) {
+	var new_datalist = [];
+	var count = 0;
+	var diff = 13.5;
+	
+	while (new_datalist.length != datalist.length) {
+		for (var i=0; i<datalist.length; i++) {
+			var tmplv=(datalist[i].lv[1].slice(-1)=='-')?(datalist[i].lv[1].slice(0, -1)):
+					(datalist[i].lv[1].slice(-1)=='=')?(datalist[i].lv[1].slice(0, -1)):datalist[i].lv[1];
+			if (tmplv == diff) {
+				new_datalist[count] = datalist[i];
+				count++;
+			}
+		}
+		diff = diff - 0.1;
+	}
+	
+	print_result(0, addr, data2rating(0));
+}
+
 function print_result(golliramode, homeaddr, trv)
 {
 	var rslt_str="";
@@ -304,8 +325,6 @@ function print_result(golliramode, homeaddr, trv)
 		print_result_sub("HISTORY枠", hist_rating + "<br>(" + hist_left + ")",
 				 "(上位" + mra_history +"曲の合計)/(" + mra_history + "*44/4)<br>()は+0.01する為の必要レート");
 	rslt_str += "<\/table>";
-	
-	rslt_str += "<h2>" + your_id + "の全譜面レート値データ<\/h2>";
 	
 	rslt_str += "<table border=1 align=center>";
 
@@ -362,7 +381,8 @@ function print_result(golliramode, homeaddr, trv)
 		
 		
 		tmplv=(datalist[i].lv[1].slice(-1)=='-')?(datalist[i].lv[1].slice(0, -1)):
-			(datalist[i].lv[1].slice(-1)=='=')?(datalist[i].lv[1].slice(0, -1)):datalist[i].lv[1];
+			(datalist[i].lv[1].slice(-1)=='=')?(datalist[i].lv[1].slice(0, -1)):
+			(datalist[i].lv[1].slice(0)=='(')?(datalist[i].lv[1].slice(1, -1)):datalist[i].lv[1];
 		
 		tmprate = (datalist[i].rate_values[1]/100).toFixed(2);
 		
