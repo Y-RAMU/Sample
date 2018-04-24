@@ -3,7 +3,7 @@ javascript:
 	function(j,f)
 	{
 		j=['https://sgimera.github.io/mai_RatingAnalyzer/scripts/mai_inner_level_milk2.js',
-		   'https://sgimera.github.io/mai_RatingAnalyzer/scripts/calc_rating_test.js',
+		   'https://sgimera.github.io/mai_RatingAnalyzer/scripts/calc_rating.js',
 		   //'https://sgimera.github.io/mai_RatingAnalyzer/scripts/maiRatingAnalyzer_body.js'
 		   'https://cdn.rawgit.com/Y-RAMU/Sample/b66fabe3/tmpBody.js'];
 		f=function(s,u)
