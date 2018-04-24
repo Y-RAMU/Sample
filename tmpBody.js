@@ -318,7 +318,7 @@ function print_result(golliramode, alldata, homeaddr, trv)
 		print_result_sub("HISTORY枠", hist_rating + "<br>(" + hist_left + ")",
 				 "(上位" + mra_history +"曲の合計)*(4/" + mra_history + ")/44<br>()は+0.01する為の必要レート");
 	rslt_str += "<\/table>";
-
+/*
 	rslt_str += "<table class=datatable border=1 align=\"center\">";
 	rslt_str += "<tr>";
 	rslt_str += "<th colspan=11 bgcolor=\"\#000000\"><font color=\"\#ffffff\">Rank/Complete情報<\/th>";
@@ -403,7 +403,7 @@ function print_result(golliramode, alldata, homeaddr, trv)
 	rslt_str += "<\/tr>";
 	rslt_str += "<\/table><br><br>";
 	}
-	
+	*/
 	rslt_str += "<table class=alltable border=1 align=center>";
 
 	var allspan=(hashtag.slice(-4)=="test")?6:5;
@@ -610,8 +610,7 @@ if(!confirm(tmpstr))
 var gollira = 0;
 var disp_all = false;
 
-if(confirm('全譜面データも出力しますか？\n（出さないと処理早まる）'))
-	disp_all=true;
+disp_all=true;
 
 get_your_id(mainet_dom + 'playerData/');	// プレイヤーデータの取得
 get_music_mdata(ex_list, mainet_dom + 'music/expertGenre');	// EXPERTデータ取得
