@@ -391,44 +391,13 @@ function print_result(golliramode, alldata, homeaddr, trv)
 	}
 	
 	rslt_str += "<\/table>";
-	}
+	
 	rslt_str += "<\/body>";
 	rslt_str += "<\/html>";
 	
 	document.open();
 	document.write(rslt_str);
 	document.close();
-}
-
-	
-function tweet_best(id)
-{
-	tweet_best_str = your_id + (ranklist.slice(-1)[0].slice(1,3)) + "%20:" + your_rating + "%0D%0A";
-	tweet_best_str += "B%3a" + best_rating + "%20%2B%20R%3a";
-	tweet_best_str += recent_rating + " %2B%20H%3a"
-	tweet_best_str += hist_rating + "%20%3d%20" + expect_max + "%0D%0A%0D%0A";
-	
-	for(var i=0; i<10; i++)
-	{
-		tmp_rate = datalist[i].music_rate;
-		tweet_best_str += (tmp_rate/100).toFixed(2) + ": "
-		if(datalist[i].nick != "")
-		{
-			tweet_best_str += datalist[i].nick;
-		}
-		else if(datalist[i].name.length < 15)
-		{
-			tweet_best_str += datalist[i].name;
-		}
-		else
-		{
-			tweet_best_str += datalist[i].name.slice(0, 14) + "%ef%bd%9e";
-		}
-		(datalist[i].rate_values[1] == tmp_rate)?(tweet_best_str+=""):
-		(datalist[i].rate_values[2] == tmp_rate)?(tweet_best_str+=" 白"):(tweet_best_str+= " 赤");
-		tweet_best_str +="%0D%0A";
-	}
-
 }
 
 function uso_level(lv)
