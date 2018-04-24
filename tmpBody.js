@@ -604,13 +604,9 @@ tmpstr += "Last Update : ";
 tmpstr += (mra_update_algorithm >= mra_update_llist)?mra_update_algorithm:mra_update_llist;
 tmpstr += "\n\n";
 tmpstr += "Programmed by @sgimera";
-if(!confirm(tmpstr))
-	return;
 	
 var gollira = 0;
-var disp_all = false;
-
-disp_all=true;
+var disp_all = true;
 
 get_your_id(mainet_dom + 'playerData/');	// プレイヤーデータの取得
 get_music_mdata(ex_list, mainet_dom + 'music/expertGenre');	// EXPERTデータ取得
