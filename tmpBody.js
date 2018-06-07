@@ -599,6 +599,8 @@ function print_result_sub_print_datalist(dlist, datedata, id, dan)
 			rowspan_num++;
 			mastr = print_result_sub_print_data(dlist[i], 1, "mai_master")
 		}
+		
+		rowspan_num++;
 
 		rslt_str += "<tr><th colspan=" + allspan + " class=music_title>" + dlist[i].name + "</th></tr>"
 		rslt_str += "<tr>";
@@ -709,11 +711,7 @@ function print_result_friend()
 	rslt_str += print_result_friend_sub
 		("HISTORY枠", hist_rating + "<br>(" + (hist_left.toFixed(2)) + ")", 
 		 frd_hist_rating + "<br>(" + (frd_hist_left.toFixed(2)) + ")");
-
-	rslt_str += "<tr><th colspan=3 bgcolor='#000000'><font color='#ffffff'>参考値</font></th></tr>";
-	rslt_str += print_result_rating_friend
-		("旧形式換算", old_rule_rating.toFixed(2), old_rule_rating,
-			frd_old_rule_rating.toFixed(2), frd_old_rule_rating);	
+	
 	rslt_str += "</table>";
 
 	if(hashtag.slice(-4)=="test")
