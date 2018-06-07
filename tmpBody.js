@@ -883,7 +883,6 @@ if(!friendmode)	/* 通常時データ取得系処理 */
 	get_nameplate_data(clist, mainet_dom + 'collection/namePlate/',
 		   Array.prototype.concat.apply([],c_rank_plate_list.concat(c_comp_plate_list)));	// ネームプレートデータ取得
 	get_current_frame(mainet_dom + 'collection/frame/');
-	collection_filter(clist);
 }
 else /* フレンドモード用 */
 {
