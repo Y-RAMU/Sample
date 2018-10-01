@@ -1124,7 +1124,7 @@ let PrintMusicList = function () {
             html += "<td bgcolor=\"#8b008b\"><font color=\"#ffffff\">" + data.data_Mas.diff + "</font></td>";
             html += "<td>" + data.data_Mas.level + "</td>";
             html += "<td>" + data.data_Mas.score + "</td>";
-            html += "<td>" + data.data_Mas.achievement + "</td>";
+            html += "<td>" + data.data_Mas.achievement + "%" + "</td>";
             html += "<td>" + data.data_Mas.rate + "</td></tr>";
         }
 
@@ -1133,7 +1133,7 @@ let PrintMusicList = function () {
             html += "<td bgcolor=\"#e8d1ff\"><font color=\"#000000\">" + data.data_ReMas.diff + "</font></td>";
             html += "<td>" + data.data_ReMas.level + "</td>";
             html += "<td>" + data.data_ReMas.score + "</td>";
-            html += "<td>" + data.data_ReMas.achievement + "</td>";
+            html += "<td>" + data.data_ReMas.achievement + "%" + "</td>";
             html += "<td>" + data.data_ReMas.rate + "</td></tr>";
         }
     }
