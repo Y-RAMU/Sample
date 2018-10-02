@@ -91,6 +91,14 @@ let mas12p = [
         "rate": ""
     },
     {
+        "title" : "サドマミホリック",
+        "diff" : "Master",
+        "level" : "12.7",
+        "score" : "",
+        "achievement" : "",
+        "rate" : ""
+    },
+    {
         "title": "もうみんなしねばいいのに",
         "diff": "Master",
         "level": "12.8",
